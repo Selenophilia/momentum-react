@@ -1,0 +1,52 @@
+.todo__list{
+    width: 85%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    padding: 0 20px;
+    color: #34495e;
+    margin-left: 5em;
+}
+
+.todo__list:hover{
+    background: rgba(0, 0, 0, .02);
+    cursor: pointer;
+  }
+
+.todo__list:hover span{
+    opacity: 1;
+}
+
+.todo__list span{
+    float: right;
+    transition: all .3s ease;
+    opacity: 0;
+    font-size: 12px;
+    
+}
+
+.todo__list .todo__delete{
+    color: #c0392b;
+
+}
+
+.todo__list .todo__edit{
+    color: #34495e;
+    margin-right: 10px;
+  
+
+}
+
+.todo__list span:hover{
+text-decoration: underline;
+}
+
+.done{
+    text-decoration: line-through;
+    color: #bdc3c7;
+}
+
+.btn__group{
+    position: relative;
+    top: -20px;
+}

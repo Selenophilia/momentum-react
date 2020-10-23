@@ -1,0 +1,12 @@
+.todo__input{
+    width: 30em;
+    height: 60px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #34495e;
+    outline: none;
+    font-size: 28px;
+    padding: 5px;
+    margin-top: 1em;
+    margin-left: 3em;
+}

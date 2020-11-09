@@ -1,43 +1,34 @@
-import React, { Component } from 'react'
+import React, {  useState } from 'react'
 import './Form.css'
 
-class Form extends Component{
-    state = {
-        todoInput: ''
-    };
-    handleInput = (e) => {
-        this.setState({
-            todoInput: e.target.value
-        })
+function Form(props){
+    
+    const [todoInput, setTodoInput] = useState('')
+    const handleInput = (e) => {
+       setTodoInput(e.target.value)
     }
 
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addTodo(this.state.todoInput)
-        
-        this.setState({
-            todoInput: ""
-        })
-
+        props.addTodo(todoInput)
+        setTodoInput("")
     }
-    render(){
+
         return(
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <input 
                           className='todo__input'  
                           type='text'
                           name='text'  
                           placeholder='Insert your task here...'
-                          value={this.state.todoInput}        
-                          onChange={this.handleInput}
+                          value={todoInput}        
+                          onChange={handleInput}
                     />
 
                 </form>
              </div>
         );
-    }
-
 }
 
 

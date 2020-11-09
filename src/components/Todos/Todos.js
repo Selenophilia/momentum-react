@@ -1,73 +1,70 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import './Todos.css'
-class Todo extends Component{
-    state = {
-        active: false,
-        isEditing: false,
-        name: this.props.name
+function Todo(props){ 
+ 
+    const [active, setActive] = useState(false)
+    const [editing, setEditing] = useState(false)
+    const [name, setName] = useState(props.name)
+
+    const toggleEditing = () => {
+        const isEditing = editing
+        setEditing(!isEditing)
     }
 
-    toggleEditing = () => {
-        const editingState = this.state.isEditing
-        this.setState({ isEditing: !editingState})
+    const toggleActive = () => {
+        const activeState = active
+        setActive( !activeState );
     }
 
-    toggleActive = () => {
-        const currentState = this.state.active;
-        this.setState({ active: !currentState });
-    }
-
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        this.props.editTodo(this.props.id, this.state.name)
-        this.setState({ isEditing: false, active: false})
+        props.editTodo(props.id, name)
+        setEditing(false)
         
     }
 
-     handleInput = (e) => {
-        this.setState({
-            name: e.target.value
-        })
+     const handleInput = (e) => {
+        setName( e.target.value )
     }
-    render(){
         const editTemplate = (
-         <form onSubmit={this.handleSubmit}>
+         <form onSubmit={handleSubmit}>
              <input 
+                className='todo__edit-input'
                 type='text'
                 name='text'  
-                value={this.state.name}        
-                onChange={this.handleInput}
+                value={name}        
+                onChange={handleInput}
                 />
             <div className='btn__group'>
                 <button type='submit'
                         className='btn todo__save'
-                        onClick={() => this.props.editTodo(this.props.id)}> save </button>
+                        onClick={() => props.editTodo(props.id), toggleActive}> save </button>
                 <button type='submit'
                         className="btn todo__cancel"
-                        onClick={()=>  this.setState({ isEditing: false, active: false})}
+                        onClick={()=>  toggleEditing, 
+                                      toggleActive}
                         > cancel </button>
              </div>
          </form>
           
         );
         const viewTemplate = (
-            <li className={this.state.active ? 'done' : null}
-                        onClick={() => this.toggleActive()}>
-                        {this.state.name} 
+            <li className={active ? 'done' : null}
+                        onClick={() => toggleActive()}>
+                        {name} 
                         <span className='todo__delete'
-                            onClick={() => this.props.deleteTodo(this.props.id)}> X</span>  
+                            onClick={() => props.deleteTodo(props.id)}> X</span>  
                         <span  className='todo__edit'
-                            onClick={() => this.toggleEditing()}> edit</span></li> 
+                            onClick={() => toggleEditing()}> edit</span></li> 
         );
      
         return(
             <div className='todos'>
                   <ul className='todo__list'>
-                        {this.state.isEditing ? editTemplate : viewTemplate}
+                        {editing ? editTemplate : viewTemplate}
                   </ul>      
             </div>
         );
-    }
 }
 
 export default Todo

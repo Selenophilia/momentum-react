@@ -41,6 +41,18 @@
 text-decoration: underline;
 }
 
+.todo__edit-input{
+    width: 20em;
+    color: #34495e;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #34495e;
+    outline: none;
+    font-size: 28px;
+    padding: 5px;
+}
+
+
 .done{
     text-decoration: line-through;
     color: #bdc3c7;
@@ -49,4 +61,15 @@ text-decoration: underline;
 .btn__group{
     position: relative;
     top: -20px;
+}
+
+.btn{
+    margin-right: 10px;
+    outline: none;
+    background: transparent;
+    color: #34495e;
+    border-color: #34495e;
+    border-style: solid;
+    border-width: 1px;
+    border-radius:2px;
 }

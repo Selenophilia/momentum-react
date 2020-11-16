@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders all todos  1`] = `
+<div>
+  <div
+    class="header"
+  >
+    <h1>
+      Todo
+      <span>
+        List
+      </span>
+    </h1>
+    <h2>
+      waddup this is a simple todoList 
+    </h2>
+  </div>
+  <div
+    class="sample"
+  >
+    <div>
+      <form>
+        <input
+          class="todo__input"
+          name="text"
+          placeholder="Insert your task here..."
+          type="text"
+          value=""
+        />
+      </form>
+    </div>
+    <div
+      class="todos"
+    >
+      <ul
+        class="todo__list"
+      >
+        <li>
+          eat
+          <span
+            class="todo__delete"
+          >
+             X
+          </span>
+          <span
+            class="todo__edit"
+          >
+             edit
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="todos"
+    >
+      <ul
+        class="todo__list"
+      >
+        <li>
+          sleep
+          <span
+            class="todo__delete"
+          >
+             X
+          </span>
+          <span
+            class="todo__edit"
+          >
+             edit
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="todos"
+    >
+      <ul
+        class="todo__list"
+      >
+        <li>
+          repeat
+          <span
+            class="todo__delete"
+          >
+             X
+          </span>
+          <span
+            class="todo__edit"
+          >
+             edit
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders input form for todos  1`] = `
+<div>
+  <form>
+    <input
+      class="todo__input"
+      name="text"
+      placeholder="Insert your task here..."
+      type="text"
+      value=""
+    />
+  </form>
+</div>
+`;

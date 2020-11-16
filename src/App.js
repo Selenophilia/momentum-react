@@ -49,14 +49,19 @@ function App() {
   
 
   return (
-        <div className="header">
+    <div>
+       <div className="header">
             <h1>Todo<span>List</span></h1>
             <h2>waddup this is a simple todoList </h2>
-              <Forms 
+        
+        </div>
+        <div className='sample'>
+        <Forms 
                   addTodo={addTodo}
                   />
-            { getTodo }
+        { getTodo }
         </div>
+    </div>
       );
 
 }
